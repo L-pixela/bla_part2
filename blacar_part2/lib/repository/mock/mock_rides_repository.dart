@@ -12,7 +12,7 @@ class MockRidesRepository extends RidesRepository {
         departureLocation: Location(name: "Battambang", country: Country.kh),
         departureDate: DateTime.now(),
         arrivalLocation: Location(name: "Siem Reap", country: Country.kh),
-        arrivalDateTime: DateTime.now(),
+        arrivalDateTime: DateTime.now().add(Duration(hours: 2)),
         driver: User(
             firstName: "Kannika",
             lastName: "Kan",
@@ -27,7 +27,7 @@ class MockRidesRepository extends RidesRepository {
         departureLocation: Location(name: "Battambang", country: Country.kh),
         departureDate: DateTime.now(),
         arrivalLocation: Location(name: "Siem Reap", country: Country.kh),
-        arrivalDateTime: DateTime.now(),
+        arrivalDateTime: DateTime.now().add(Duration(hours: 2)),
         driver: User(
             firstName: "Chaylim",
             lastName: "Cheng",
@@ -42,7 +42,7 @@ class MockRidesRepository extends RidesRepository {
         departureLocation: Location(name: "Battambang", country: Country.kh),
         departureDate: DateTime.now(),
         arrivalLocation: Location(name: "Siem Reap", country: Country.kh),
-        arrivalDateTime: DateTime.now(),
+        arrivalDateTime: DateTime.now().add(Duration(hours: 3)),
         driver: User(
             firstName: "Mengtech",
             lastName: "Hout",
@@ -57,7 +57,7 @@ class MockRidesRepository extends RidesRepository {
         departureLocation: Location(name: "Battambang", country: Country.kh),
         departureDate: DateTime.now(),
         arrivalLocation: Location(name: "Siem Reap", country: Country.kh),
-        arrivalDateTime: DateTime.now(),
+        arrivalDateTime: DateTime.now().add(Duration(hours: 2)),
         driver: User(
             firstName: "Limhao",
             lastName: "Hong",
@@ -72,7 +72,7 @@ class MockRidesRepository extends RidesRepository {
         departureLocation: Location(name: "Battambang", country: Country.kh),
         departureDate: DateTime.now(),
         arrivalLocation: Location(name: "Siem Reap", country: Country.kh),
-        arrivalDateTime: DateTime.now(),
+        arrivalDateTime: DateTime.now().add(Duration(hours: 3)),
         driver: User(
             firstName: "Sovanda",
             lastName: "Sok",
