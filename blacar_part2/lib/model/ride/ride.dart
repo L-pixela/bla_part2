@@ -25,19 +25,21 @@ class Ride {
   final int availableSeats;
   final double pricePerSeat;
 
+  final bool acceptsPets;
+
   RideStatus status = RideStatus.created;
 
   final List<User> passengers = [];
 
-  Ride({
-    required this.departureLocation,
-    required this.departureDate,
-    required this.arrivalLocation,
-    required this.arrivalDateTime,
-    required this.driver,
-    required this.availableSeats,
-    required this.pricePerSeat,
-  });
+  Ride(
+      {required this.departureLocation,
+      required this.departureDate,
+      required this.arrivalLocation,
+      required this.arrivalDateTime,
+      required this.driver,
+      required this.availableSeats,
+      required this.pricePerSeat,
+      required this.acceptsPets});
 
   void addPassenger(User passenger) {
     passengers.add(passenger);

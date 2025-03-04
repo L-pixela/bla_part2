@@ -55,8 +55,10 @@ class _BlaLocationPickerState extends State<BlaLocationPicker> {
   }
 
   List<Location> getLocationsFor(String text) {
-    return LocationsService.instance
-        .getLocations()
+    return [
+      ...LocationsService.instance.getLocations(),
+      ...LocationsService.availableLocations
+    ]
         .where((location) =>
             location.name.toUpperCase().contains(text.toUpperCase()))
         .toList();
