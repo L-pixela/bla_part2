@@ -86,7 +86,8 @@ class MockRidesRepository extends RidesRepository {
   ];
 
   @override
-  List<Ride> getRides(RidePreference preferences, RideFilter? filter) {
+  List<Ride> getRides(
+      RidePreference preferences, RideFilter? filter, RideSortType? sortType) {
     return _rides.where((ride) {
       bool matchesPreference =
           ride.departureLocation == preferences.departure &&

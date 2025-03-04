@@ -3,7 +3,8 @@ import '../model/ride_pref/ride_pref.dart';
 import '../service/rides_service.dart';
 
 abstract class RidesRepository {
-  List<Ride> getRides(RidePreference preferences, RideFilter? filter);
+  List<Ride> getRides(
+      RidePreference preferences, RideFilter? filter, RideSortType? sortType);
 
   void addRides(Ride ride);
 }
