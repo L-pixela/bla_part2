@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:week_3_blabla_project/service/ride_prefs_service.dart';
+import 'package:week_3_blabla_project/service/rides_service.dart';
 import 'package:week_3_blabla_project/widgets/actions/bla_icon_button.dart';
 
 import '../../../model/ride_pref/ride_pref.dart';
@@ -6,13 +8,11 @@ import '../../../theme/theme.dart';
 import '../../ride_pref/widgets/ride_pref_form.dart';
 
 class RidePrefModal extends StatefulWidget {
+  RidePrefModal({super.key, required this.currentPreference
+      // TODO 7 : We should pass the current prefs to this modal;
+      });
+  RidePreference currentPreference;
 
-  const RidePrefModal({
-
-    super.key,     
-     // TODO 7 : We should pass the current prefs to this moda; 
-  });
- 
   @override
   State<RidePrefModal> createState() => _RidePrefModalState();
 }
@@ -23,7 +23,12 @@ class _RidePrefModalState extends State<RidePrefModal> {
   }
 
   void onSubmit(RidePreference newPreference) {
-      // TODO 9 : We should pop this modal, with the new current preference
+    // TODO 9 : We should pop this modal, with the new current preference
+    setState(() {
+      widget.currentPreference = newPreference;
+    });
+
+    Navigator.pop(context, newPreference);
   }
 
   @override
@@ -51,7 +56,8 @@ class _RidePrefModalState extends State<RidePrefModal> {
               child: Padding(
             padding: const EdgeInsets.all(10),
             child: RidePrefForm(
-              initialPreference: null,        // TODO 7 : The form should be displayed with the modal current prefs
+              initialPreference: RidePrefService.instance
+                  .currentPreference, // TODO 7 : The form should be displayed with the modal current prefs
               onSubmit: onSubmit,
             ),
           )),
